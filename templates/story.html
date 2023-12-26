@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <h1 class="content__title">{{title}}</h1>
+    <p>{{text}}</p>
+    <a class="story-button" href="/">Select New Story</a>
+    <a href="/{{id}}" class="">Retry Current Story</a>
+{% endblock %}

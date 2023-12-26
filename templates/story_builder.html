@@ -3,10 +3,10 @@
 {% block title %}Story Builder{% endblock %}
 
 {% block content %}
-    <h2 class="content__title">{{story.title}}</h2>
-    <form action="/{{story.id}}">
+    <h1 class="content__title">{{story.title}}</h1>
+    <form action="/{{story.id}}" method="POST">
         {% for prompt in story.prompts %}
-        <input type="text" id="prompt-{{loop.index}}" placeholder="" required>
+        <input type="text" id="prompt-{{loop.index}}" placeholder="" name="prompt-{{loop.index}}" required>
         <label for="prompt-{{loop.index}}">
             {% if prompt[0] in 'aeiou' %}
             Enter an {{prompt}}

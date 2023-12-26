@@ -1,4 +1,5 @@
 """Madlibs Stories."""
+from markupsafe import Markup
 
 
 class Story:
@@ -34,7 +35,7 @@ class Story:
         for (key, val) in answers.items():
             text = text.replace("{" + key + "}", f'<span class="user_word">{val}</span>')
 
-        return text
+        return Markup(text)
 
 
 # Here's a story to get you started
