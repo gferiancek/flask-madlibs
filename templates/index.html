@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Flask Madlibs{% endblock %}
+
+{% block content %}
+    <h1 class="content__title">Select a story</h1>
+            {% for story in stories %}
+            <a class="story-link" href="/{{story.id}}">{{story.title}}</a>
+            {% endfor %}
+    </form>
+{% endblock %}
