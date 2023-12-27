@@ -21,7 +21,10 @@ def render_story(story_id):
     story = next(story for story in story_list if story.id == story_id)
 
     if request.method == "GET":
-        return render_template("story_builder.html", story=story)
+        ui_prompts = [prompt.replace("_", " ") for prompt in story.prompts]
+        return render_template(
+            "story_builder.html", title=story.title, prompts=ui_prompts, id=story.id
+        )
 
     if request.method == "POST":
         user_words = {}

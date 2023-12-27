@@ -3,9 +3,9 @@
 {% block title %}Story Builder{% endblock %}
 
 {% block content %}
-    <h1 class="content__title">{{story.title}}</h1>
-    <form class="story-builder" action="/{{story.id}}" method="POST">
-        {% for prompt in story.prompts %}
+    <h1 class="content__title">{{title}}</h1>
+    <form class="story-builder" action="/{{id}}" method="POST">
+        {% for prompt in prompts %}
         <div class="prompt">
             <input class="prompt__input" type="text" id="prompt-{{loop.index}}" placeholder="" name="prompt-{{loop.index}}" required>
             <label class="prompt__label" for="prompt-{{loop.index}}">
