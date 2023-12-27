@@ -33,8 +33,12 @@ class Story:
         text = self.template
 
         for (key, val) in answers.items():
-            text = text.replace("{" + key + "}", f'<span class="user_word">{val}</span>')
+            # Wrapping val in <span> tag allows the app to style these words different
+            # than the rest of the story.
+            text = text.replace("{" + key + "}", f'<span class="user-word">{val}</span>')
 
+        # After applying <span> tags around each val, we want to make the whole
+        # str valid Markup.
         return Markup(text)
 
 

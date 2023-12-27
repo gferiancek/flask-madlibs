@@ -1,0 +1,96 @@
+/** Story Components **/
+.story-link {
+    padding: var(--padding-normal);
+    width: 100%;
+    color: var(--color-on-content);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        background-color: var(--color-highlight);
+    }
+}
+
+.story-text {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2.5em;
+
+    .user-word {
+        margin: var(--margin-small);
+        padding: var(--padding-small);
+        color: var(--color-on-accent);
+        background-color: var(--color-accent);
+        text-decoration: underline;
+        box-shadow: var(--content-shadow);
+    }
+}
+
+/** Form components **/
+.prompt {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--margin-large);
+
+    &__label {
+        position: absolute;
+        margin-left: var(--margin-normal);
+        transition: all 300ms;
+    }
+
+    &__input {
+        width: 100%;
+        padding: var(--padding-small);
+        border-radius: 1em;
+        border: none;
+        outline: none;
+        box-shadow: var(--content-shadow);
+
+        &:focus {
+            outline: 2px solid var(--color-accent);
+        }
+    }
+
+    &__input:focus + &__label,
+    &__input:not(:placeholder-shown) + &__label {
+        transform: translateY(-120%) scale(0.8);
+    }
+}
+
+/** Buttons **/
+
+// Technically an <a> tag, but since we're not using JavaScript
+// anywhere, it's easier to just style an <a> as a button
+// and not worry about click listeners, etc.
+.story-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button,
+.story-button {
+    padding: var(--padding-normal);
+    margin: var(--margin-none) var(--margin-normal);
+    text-align: center;
+    color: var(--color-on-accent);
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--color-accent);
+    box-shadow: var(--content-shadow);
+    border-radius: 1em;
+    border: none;
+    outline: none;
+
+    &:active {
+        background-color: var(--color-accent-dark);
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

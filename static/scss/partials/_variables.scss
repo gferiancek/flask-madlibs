@@ -1,0 +1,29 @@
+:root {
+    /** Colors **/
+    --color-primary: hsl(7, 80%, 60%);
+    --color-on-primary: white;
+    --color-accent: hsl(7, 80%, 75%);
+    --color-accent-dark: hsl(7, 50%, 60%);
+    --color-on-accent: white;
+    --color-content: hsl(152, 80%, 99%);
+    --color-on-content: black;
+    --color-shadow: hsl(153, 12%, 30%);
+    --color-backdrop: hsl(153, 12%, 75%);
+    --color-highlight: hsl(0, 0%, 95%);
+
+    /** Spacing **/
+    --padding-none: 0;
+    --padding-small: 0.5em;
+    --padding-normal: 1em;
+    --padding-large: 2em;
+
+    --margin-none: 0;
+    --margin-small: 0.5em;
+    --margin-normal: 1em;
+    --margin-large: 2em;
+
+    /** Shadows **/
+    --header-shadow: 0px 5px 5px var(--color-shadow);
+    --layout-shadow: 5px 5px 5px var(--color-shadow);
+    --content-shadow: 1px 1px 5px var(--color-shadow);
+}

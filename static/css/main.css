@@ -1,0 +1,190 @@
+:root {
+  /** Colors **/
+  --color-primary: hsl(7, 80%, 60%);
+  --color-on-primary: white;
+  --color-accent: hsl(7, 80%, 75%);
+  --color-accent-dark: hsl(7, 50%, 60%);
+  --color-on-accent: white;
+  --color-content: hsl(152, 80%, 99%);
+  --color-on-content: black;
+  --color-shadow: hsl(153, 12%, 30%);
+  --color-backdrop: hsl(153, 12%, 75%);
+  --color-highlight: hsl(0, 0%, 95%);
+  /** Spacing **/
+  --padding-none: 0;
+  --padding-small: 0.5em;
+  --padding-normal: 1em;
+  --padding-large: 2em;
+  --margin-none: 0;
+  --margin-small: 0.5em;
+  --margin-normal: 1em;
+  --margin-large: 2em;
+  /** Shadows **/
+  --header-shadow: 0px 5px 5px var(--color-shadow);
+  --layout-shadow: 5px 5px 5px var(--color-shadow);
+  --content-shadow: 1px 1px 5px var(--color-shadow);
+}
+
+* {
+  padding: var(--padding-none);
+  margin: var(--margin-none);
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-backdrop);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/** Header **/
+.header {
+  width: 100%;
+  padding: var(--padding-large);
+  margin-bottom: var(--margin-large);
+  text-align: center;
+  background-color: var(--color-primary);
+  box-shadow: var(--header-shadow);
+}
+.header__home {
+  text-decoration: none;
+  color: var(--color-on-primary);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/** Main Content **/
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--margin-normal);
+  padding: var(--padding-large) var(--padding-normal);
+  border-radius: 10px;
+  background-color: var(--color-content);
+  box-shadow: var(--content-shadow);
+}
+.content__title {
+  margin-bottom: var(--margin-normal);
+}
+.content__actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: var(--margin-normal);
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .content {
+    width: 80%;
+  }
+}
+
+/** Forms **/
+.story-builder {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .story-builder {
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: var(--margin-normal);
+         column-gap: var(--margin-normal);
+    width: 80%;
+  }
+  .story-builder .content__actions {
+    grid-column: 1/3;
+  }
+}
+
+/** Story Components **/
+.story-link {
+  padding: var(--padding-normal);
+  width: 100%;
+  color: var(--color-on-content);
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+}
+.story-link:hover {
+  background-color: var(--color-highlight);
+}
+
+.story-text {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2.5em;
+}
+.story-text .user-word {
+  margin: var(--margin-small);
+  padding: var(--padding-small);
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+  text-decoration: underline;
+  box-shadow: var(--content-shadow);
+}
+
+/** Form components **/
+.prompt {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--margin-large);
+}
+.prompt__label {
+  position: absolute;
+  margin-left: var(--margin-normal);
+  transition: all 300ms;
+}
+.prompt__input {
+  width: 100%;
+  padding: var(--padding-small);
+  border-radius: 1em;
+  border: none;
+  outline: none;
+  box-shadow: var(--content-shadow);
+}
+.prompt__input:focus {
+  outline: 2px solid var(--color-accent);
+}
+.prompt__input:not(:-moz-placeholder-shown) + .prompt__label {
+  transform: translateY(-120%) scale(0.8);
+}
+.prompt__input:focus + .prompt__label, .prompt__input:not(:placeholder-shown) + .prompt__label {
+  transform: translateY(-120%) scale(0.8);
+}
+
+/** Buttons **/
+.story-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+button,
+.story-button {
+  padding: var(--padding-normal);
+  margin: var(--margin-none) var(--margin-normal);
+  text-align: center;
+  color: var(--color-on-accent);
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: var(--color-accent);
+  box-shadow: var(--content-shadow);
+  border-radius: 1em;
+  border: none;
+  outline: none;
+}
+button:active,
+.story-button:active {
+  background-color: var(--color-accent-dark);
+}
+button:hover,
+.story-button:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */

@@ -4,7 +4,9 @@
 
 {% block content %}
     <h1 class="content__title">{{title}}</h1>
-    <p>{{text}}</p>
-    <a class="story-button" href="/">Select New Story</a>
-    <a href="/{{id}}" class="">Retry Current Story</a>
+    <p class="story-text">{{text}}</p>
+    <div class="content__actions">
+        <a class="story-button" href="/">Select New Story</a>
+        <a class="story-button" href="/{{id}}">Retry Current Story</a>
+    </div>
 {% endblock %}

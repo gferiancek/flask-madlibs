@@ -4,17 +4,21 @@
 
 {% block content %}
     <h1 class="content__title">{{story.title}}</h1>
-    <form action="/{{story.id}}" method="POST">
+    <form class="story-builder" action="/{{story.id}}" method="POST">
         {% for prompt in story.prompts %}
-        <input type="text" id="prompt-{{loop.index}}" placeholder="" name="prompt-{{loop.index}}" required>
-        <label for="prompt-{{loop.index}}">
-            {% if prompt[0] in 'aeiou' %}
-            Enter an {{prompt}}
-            {% else %}
-            Enter a {{prompt}}
-            {% endif %}
-        </label>
+        <div class="prompt">
+            <input class="prompt__input" type="text" id="prompt-{{loop.index}}" placeholder="" name="prompt-{{loop.index}}" required>
+            <label class="prompt__label" for="prompt-{{loop.index}}">
+                {% if prompt[0] in 'aeiou' %}
+                Enter an {{prompt}}
+                {% else %}
+                Enter a {{prompt}}
+                {% endif %}
+            </label>
+        </div>
         {% endfor %}
-        <button>View Results</button>
+        <div class="content__actions">
+            <button>View Results</button>
+        </div>
     </form>
 {% endblock %}
